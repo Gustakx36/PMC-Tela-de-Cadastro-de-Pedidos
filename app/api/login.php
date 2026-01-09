@@ -27,7 +27,7 @@ try {
 
     if($result !== false) {
         $db->beginTransaction();
-        
+
         $token = bin2hex(random_bytes(32));
     
         $update = $db->prepare("
@@ -52,6 +52,12 @@ try {
         ]); 
 
         $db->commit();
+    }else{
+        echo json_encode([
+            'success'   => $result !== false,
+            'msg'       => 'Usuário Não Existe!'
+        ]);
+        exit;
     }
 
     
