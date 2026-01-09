@@ -18,7 +18,9 @@ $(function () {
         });
     });
     $('#criar_login').on('click', () => {
-        $('#login').val()
+        if($('#login').val() == '' || $('#senha').val() == '') return $('#msg').html(`
+            <div class="alert alert-danger" onclick="$('#msg').html('')">Preencha Todos os Campos</div>
+        `);
     
         $.ajax({
             url: '/criar_login',
