@@ -39,12 +39,15 @@ $(function () {
             });
             $('#tabelaProdutos tbody').on('click', '#produtos', function () {
                 deletarProduto(parseInt($(this).attr('value')), this);
+                atualizaValorTotal();
             });
             $('#tabelaProdutos tbody').on('click', '#rmv', function () {
                 removerUmProduto(parseInt($(this).attr('value')), this);
+                atualizaValorTotal();
             });
             $('#tabelaProdutos tbody').on('click', '#add', function () {
                 adicionarUmProduto(parseInt($(this).attr('value')), this);
+                atualizaValorTotal();
             });
         }
         $(`option[value="${produto.produto_id}"]`).attr('disabled', true)
@@ -149,6 +152,10 @@ $(function () {
         return valido;
     }
 
+    function atualizaValorTotal(){
+        $('#total').text(`Total: R$ ${produtosSelecionados.map((item) => parseFloat(item.valor)).reduce((acumulador, total) => acumulador + total, 0).toFixed(2)}`)
+    }
+
     $('#adicionarProduto').on('click', function () {
         if(!validaAdicionarProduto()) return;
         var fornecedores = [];
@@ -178,6 +185,7 @@ $(function () {
         $('#valor').val("");
         $('#produto').val("");
         $('#adicionarProduto').attr('disabled', true);
+        atualizaValorTotal();
     });
 
     $('#criarPedido').on('click', function () {
@@ -270,7 +278,7 @@ $(function () {
 
     $('#produto, #qtd, #fornecedor')
     .on('click change keyup', function (e) {
-        $('#adicionarProduto').attr('disabled', !validaAdicionarProduto());
+        $('#adicionarProduto').attr('disabled', !validaAdicionarProduto()); 
     });
 
     $('#qtd').on('keyup change', function (e) {

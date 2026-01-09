@@ -86,6 +86,10 @@ require __DIR__ . '/../../../app/validacao/validacao.php';
                     </div>
                 </div>
 
+                <div class="col-md-12 d-flex justify-content-start mt-1 mb-1">
+                    <p class="fw-bold" id=total>Total: R$ 0.00</p>
+                </div>
+
                 <div class="col-md-12 d-flex overflow-auto">
                     <div class="overflow-auto" id="table">
                         <table id="tabelaProdutos" class="table table-bordered table-hover">

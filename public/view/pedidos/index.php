@@ -84,7 +84,8 @@ require __DIR__ . '/../../../app/validacao/validacao.php';
                     </table>
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer d-flex justify-content-between">
+                    <p class="fw-bold" id=total></p>
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
 

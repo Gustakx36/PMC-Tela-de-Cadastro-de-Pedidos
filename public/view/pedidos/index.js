@@ -74,6 +74,7 @@ $(function () {
                     },
                 ]
             });
+            $('#total').text(`Total: R$ ${data.result.map((item) => parseFloat(item.valor)).reduce((acumulador, total) => acumulador + total, 0).toFixed(2)}`)
         });
         modal.show();
     }
