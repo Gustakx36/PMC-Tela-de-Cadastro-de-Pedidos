@@ -48,7 +48,7 @@ $(function () {
             </table>
         `)
         $.get('/pedido_produtos', {pedido_id}, function (data) {
-            $('#pedido_id').html(pedido_id);
+            $('#pedido__id').html(pedido_id);
             $('#tabelaProdutos').DataTable({
                 paging: false,
                 lengthChange: false,

@@ -76,7 +76,7 @@ require __DIR__ . '/../../../app/validacao/validacao.php';
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Produtos do Pedido <span id="pedido_id">1</span></h5>
+                    <h5 class="modal-title">Produtos do Pedido <span id="pedido__id">1</span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
