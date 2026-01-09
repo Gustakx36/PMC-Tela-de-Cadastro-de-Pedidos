@@ -9,7 +9,7 @@ $select = $db->prepare(<<<SQL
     SELECT 
         p.id,
         CONCAT(p.rua, ", ", p.numero, " - ", p.bairro, "\n", p.cep, " ", p.cidade, "/", p.estado) AS endereco,
-        DATE_FORMAT(p.created_at, '%d/%m/%Y %H:%i:%s') AS data
+        DATE_FORMAT(DATE_SUB(p.created_at, INTERVAL 3 HOUR), '%d/%m/%Y %H:%i:%s') AS data
     FROM 
         pedidos p
     WHERE
