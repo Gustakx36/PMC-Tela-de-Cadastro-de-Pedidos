@@ -40,4 +40,3 @@ if (isset($_COOKIE['token'])) {
             header('Location: /view/login');
     }
 }
-exit;
