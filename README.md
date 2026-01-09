@@ -9,3 +9,12 @@ cd PMC-Tela-de-Cadastro-de-Pedidos
 sudo docker compose up -d --build
 
 http://localhost:8080
+
+# Outra Opção de Acesso
+
+Meu servidor http://147.93.67.60:8080
+
+Login Criado: pmc.login
+Senha: 123
+
+Ou pode seguir criando um usuário!
