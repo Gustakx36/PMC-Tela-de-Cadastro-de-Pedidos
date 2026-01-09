@@ -25,6 +25,19 @@ try {
     ]);
     $result = $select->fetch(PDO::FETCH_ASSOC);
 
+    $selectLogin = $db->prepare("
+        SELECT 
+            1
+        FROM 
+            usuarios 
+        WHERE 
+            login = :login
+    ");
+    $selectLogin->execute([
+        ':login' => $data['login']
+    ]);
+    $resultLogin = $selectLogin->fetch(PDO::FETCH_ASSOC);
+
     if($result !== false) {
         $db->beginTransaction();
 
@@ -52,7 +65,8 @@ try {
         ]); 
 
         $db->commit();
-    }else{
+    }
+    if($resultLogin === false){
         echo json_encode([
             'success'   => $result !== false,
             'msg'       => 'Usuário Não Existe!'
